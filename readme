@@ -1,0 +1,15 @@
+excluir __pycache__/
+Include/
+Lib/
+Scripts/
+pyvenv.cfg
+
+
+
+1- python -m venv .
+2- .\Scripts\activate
+3- pip install fastapi
+4- pip install "uvicorn[standard]"
+5- pip install sqlalchemy
+6- pip freeze > requirements.txt
+7- uvicorn apiPastelaria:app --reload

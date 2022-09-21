@@ -1,10 +1,13 @@
 import db
+import security
 from mod_produto.ProdutoModel import ProdutoDB
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 
 router = APIRouter()
+
+router = APIRouter( dependencies=[Depends(security.verify_token), Depends(security.verify_key)] )
 
 class Produto(BaseModel):
         codigo: int = None

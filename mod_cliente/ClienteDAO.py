@@ -1,10 +1,13 @@
 import db
+import security
 from mod_cliente.ClienteModel import ClienteDB
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 
 router = APIRouter()
+
+router = APIRouter( dependencies=[Depends(security.verify_token), Depends(security.verify_key)] )
 
 class Cliente(BaseModel):
         codigo: int = None
