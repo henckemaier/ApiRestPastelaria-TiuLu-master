@@ -1,0 +1,30 @@
+GET http://localhost:8000/cliente/ HTTP/1.1
+
+### Verbo POST – adicionar
+POST http://127.0.0.1:8000/cliente/ HTTP/1.1
+content-type: application/json
+
+{
+        "nome" : "Abc da Silva",
+        "cpf" : "01923874656",
+        "telefone" : "49988234567",
+        "compra_fiado" : "1",
+        "dia_fiado" : "1",
+        "senha" : "123"
+}
+
+### Verbo PUT – atualiza
+PUT http://127.0.0.1:8000/cliente/1 HTTP/1.1
+content-type: application/json
+
+{
+        "nome" : "Abc da Silva Pinto",
+        "cpf" : "11943274651",
+        "telefone" : "79985233567",
+        "compra_fiado" : 2,
+        "dia_fiado" : "2",
+        "senha" : "321"
+}
+
+### Verbo DELETE - excluir
+DELETE http://127.0.0.1:8000/cliente/1 HTTP/1.1
